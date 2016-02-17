@@ -1,9 +1,4 @@
 ---
-- name: Configure etc
-  template: src=templates/toto.txt dest=/tmp/toto.txt backup=yes
-  with_items:
-    - toto.txt
-
 - name: make a command
   command: 'aws ec2 describe-instances --region "us-east-1" --filters "Name=tag:ansible,Values=true" --query "Reservations[*].Instances[*].[PrivateIpAddress]" --output text'
   register: aws
@@ -12,7 +7,8 @@
   shell: printf '{{aws.stdout}}' > /tmp/ip
 
 - name: copy cat
-  shell : sed -e "s/$/ ansible_user=ubuntu/" /tmp/aws3 > /etc/ansible/hosts
+  shell : sed -e "s/$/ ansible_user=ubuntu/" /tmp/ip > /etc/ansible/hosts
 
 - name: copy ca
   shell : sed -i '1s/^/[cluj]\n/' /etc/ansible/hosts
+
