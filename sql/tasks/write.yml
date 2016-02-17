@@ -1,0 +1,5 @@
+---
+- name: Configure etc
+  template: src=templates/toto.txt dest=/home/stack/toto.txt backup=yes
+  with_items:
+    - toto.txt

@@ -1,0 +1,5 @@
+toto tata tati
+stuff
+
+
+{{ stuff.stdout_lines[0]}}

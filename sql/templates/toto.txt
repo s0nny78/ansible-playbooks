@@ -1,0 +1,3 @@
+toto tata tati
+{{ ansible_all_ipv4_addresses }}
+{{ var }}

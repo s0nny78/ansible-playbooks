@@ -1,0 +1,3 @@
+---
+#select: mysql -u root -pbabar -e 'select LastName from ansible.Persons;' 
+client: 192.168.0.31

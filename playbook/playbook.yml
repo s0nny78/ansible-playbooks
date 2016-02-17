@@ -1,0 +1,11 @@
+---
+- hosts: client
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: root
+  
+  tasks:
+  - include : tasks/runningApache.yml
+  handlers:
+  - include: handlers/handlers.yml

@@ -1,0 +1,6 @@
+---
+# this might be in a file like handlers/handlers.yml
+- name: restart apache
+  service: 
+    name:apache 
+    state:restarted
