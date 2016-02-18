@@ -1,0 +1,23 @@
+---
+  -name: repo for tomcat8
+   apt_repository: repo='ppa:dirk-computer42/c42-edge-server'
+
+  - name: apt-get update
+    apt: update_cache=yes
+
+  - name: ensure apache is at the latest version
+    apt:
+      name: default-jdk
+      state : present
+
+  - name: ensure apache is at the latest version
+    apt:
+      name: tomcat8
+      state: present
+    notify: restart tomcat
+    - restart tomcat8
+
+  - name: ensure tomcat is running
+    service:
+      name: tomcat8
+      state: started

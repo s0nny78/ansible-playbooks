@@ -1,11 +1,11 @@
 ---
-- hosts: client
+- hosts: cluj
   vars:
     http_port: 80
     max_clients: 200
   remote_user: root
   
   tasks:
-  - include : tasks/runningApache.yml
+  - include : tasks/install.yml
   handlers:
   - include: handlers/handlers.yml
