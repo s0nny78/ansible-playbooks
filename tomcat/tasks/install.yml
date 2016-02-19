@@ -1,23 +1,31 @@
 ---
-  -name: repo for tomcat8
-   apt_repository: repo='ppa:dirk-computer42/c42-edge-server'
+  - name: repo for tomcat8
+    apt_repository: repo='ppa:dirk-computer42/c42-edge-server'
+    sudo: yes
 
   - name: apt-get update
     apt: update_cache=yes
+    sudo: yes
 
-  - name: ensure apache is at the latest version
+
+  - name: ensure jdk is there
     apt:
       name: default-jdk
       state : present
 
-  - name: ensure apache is at the latest version
+
+  - name: ensure tomcat is present
+    sudo: yes
     apt:
       name: tomcat8
       state: present
-    notify: restart tomcat
-    - restart tomcat8
 
   - name: ensure tomcat is running
+    sudo: yes
     service:
       name: tomcat8
       state: started
+
+  - name: dl war file
+    get_url: url=http://d2io1hx8u877l0.cloudfront.net/2-collectors/clojure-collector/clojure-collector-1.1.0-standalone.war dest=/var/lib/tomcat8/webapps/
+    sudo: yes
