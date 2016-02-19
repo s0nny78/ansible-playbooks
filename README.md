@@ -4,7 +4,7 @@
 
 This is a list of my playbook.
 If you came here because you used my stack :
-* [AWS/README.md] [PlDb]
+* [AWS/README.md] (https://github.com/s0nny78/AWS)
 
 "host" is the playbook used for Ansible Server to configure its own host file 
 
