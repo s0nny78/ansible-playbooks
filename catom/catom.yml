@@ -1,0 +1,9 @@
+---
+- hosts: cluj
+  vars:
+    http_port: 80
+    max_clients: 200
+  #remote_user: sudo
+  
+  tasks:
+  - include : tasks/install.yml
