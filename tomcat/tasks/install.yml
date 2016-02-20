@@ -9,6 +9,7 @@
 
 
   - name: ensure jdk is there
+    sudo : yes
     apt:
       name: default-jdk
       state : present
