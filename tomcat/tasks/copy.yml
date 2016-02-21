@@ -1,6 +1,0 @@
----
-- name: Configure etc
-  template: src=templates/titi.txt dest=/home/stack/titi.txt backup=yes
-  with_items:
-    - titi.txt
-  delegate_to: "{{client}}"
